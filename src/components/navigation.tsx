@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -34,7 +32,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <motion.a href="#home" className="text-2xl font-serif font-bold text-gray-900" whileHover={{ scale: 1.05 }}>
-            CleanQuest
+            <img src="/logo.png" alt="CleanQuest Solutions Ltd" className="h-16 w-auto" />
           </motion.a>
 
           {/* Desktop Navigation */}

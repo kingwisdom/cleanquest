@@ -18,7 +18,13 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
-    console.log("Form submitted:", formData)
+    const phone = "447918137624";
+    const message = `${formData?.name}%0A${formData?.email}%0A${formData?.message}%0A${formData?.phone}%0AService Required: ${formData?.service}`;
+
+    window.open(
+      `https://api.whatsapp.com/send?phone=${phone}&text=${message}`,
+      "_blank"
+    );
     alert("Thank you for your inquiry! We'll get back to you soon.")
     setFormData({ name: "", email: "", phone: "", service: "", message: "" })
   }
