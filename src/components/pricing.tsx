@@ -10,7 +10,7 @@ export default function Pricing() {
   const pricingPlans = [
     {
       category: "Domestic Cleaning",
-      price: "£16",
+      price: "£17.5",
       unit: "per hour",
       description: "Regular house cleaning services",
       features: [
@@ -32,7 +32,8 @@ export default function Pricing() {
         "All domestic cleaning included",
         "Appliance cleaning",
         "Window & skirting boards",
-        "Carpet cleaning available",
+        "caveat",
+        "Note: prices depend on condition."
       ],
       popular: true,
     },
@@ -41,7 +42,7 @@ export default function Pricing() {
       price: "From £150",
       unit: "per property",
       description: "Professional move-out cleaning",
-      features: ["1-bed: £150", "2-bed: £180", "3-bed: £220", "4-bed: £250", "Deposit-back guarantee"],
+      features: ["1-bed: £150", "2-bed: £180", "3-bed: £220", "4-bed: £250", "Deposit-back guarantee", "caveat", "Note: prices depend on condition."],
       popular: false,
     },
     {

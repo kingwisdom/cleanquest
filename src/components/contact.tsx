@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Contact() {
   const ref = useRef(null)
@@ -15,18 +16,49 @@ export default function Contact() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    const phone = "447918137624";
-    const message = `${formData?.name}%0A${formData?.email}%0A${formData?.message}%0A${formData?.phone}%0AService Required: ${formData?.service}`;
+  const handleSubmit = async (e: React.FormEvent) => {
+    try {
+      e.preventDefault()
 
-    window.open(
-      `https://api.whatsapp.com/send?phone=${phone}&text=${message}`,
-      "_blank"
-    );
-    alert("Thank you for your inquiry! We'll get back to you soon.")
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+      // Send email via API
+      await fetch('https://drivesolution.cloud/notification/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          replyTo: "adeoyetemitayo99@gmail.com",
+          subject: `New Contact Form Submission from ${formData.name}`,
+          message: formData.message,
+          contacts: [
+            {
+              name: formData.name,
+              email: formData.email,
+              phone: formData.phone,
+              otherInfo: `Service: ${formData.service}`
+            }
+          ],
+          emailDisplayName: "CleanQuest Solutions",
+          messageType: 0
+        })
+      })
+
+      // Handle form submission
+
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("There was an error submitting the form. Please try again later.");
+    }
+    finally {
+      const phone = "447459755292";
+      const message = `${formData?.name}%0A${formData?.email}%0A${formData?.message}%0A${formData?.phone}%0AService Required: ${formData?.service}`;
+
+      window.open(
+        `https://api.whatsapp.com/send?phone=${phone}&text=${message}`,
+        "_blank"
+      );
+      toast.success("Thank you for your inquiry! We'll get back to you soon.")
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -37,8 +69,14 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "Cleanquestsolutionsltd@gmail.com",
-      link: "mailto:Cleanquestsolutionsltd@gmail.com",
+      value: "cleanquestsolutionsltd@gmail.com",
+      link: "mailto:cleanquestsolutionsltd@gmail.com",
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      value: "07459755292",
+      link: "tel:07459755292",
     },
     {
       icon: Phone,
@@ -227,6 +265,7 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   )
 }

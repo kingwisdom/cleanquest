@@ -118,7 +118,7 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/modern-clean-minimalist-home-interior-with-natural.jpg" alt="Professional cleaning service" className="w-full h-auto" />
+              <img src="/home.png" alt="Professional cleaning service" className="w-full h-auto" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
 
