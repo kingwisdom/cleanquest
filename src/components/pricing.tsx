@@ -32,17 +32,15 @@ export default function Pricing() {
         "All domestic cleaning included",
         "Appliance cleaning",
         "Window & skirting boards",
-        "caveat",
-        "Note: prices depend on condition."
       ],
       popular: true,
     },
     {
       category: "End of Tenancy",
-      price: "From £150",
+      price: "£150",
       unit: "per property",
       description: "Professional move-out cleaning",
-      features: ["1-bed: £150", "2-bed: £180", "3-bed: £220", "4-bed: £250", "Deposit-back guarantee", "caveat", "Note: prices depend on condition."],
+      features: ["1-bed: from £150", "2-bed: from £180", "3-bed: from £220", "4-bed: from £250", "Deposit-back guarantee"],
       popular: false,
     },
     {

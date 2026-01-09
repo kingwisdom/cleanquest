@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react"
 import { ToastContainer, toast } from 'react-toastify';
 
 export default function Contact() {
@@ -21,22 +21,34 @@ export default function Contact() {
       e.preventDefault()
 
       // Send email via API
-      await fetch('https://drivesolution.cloud/notification/email/send', {
+      await fetch('https://drivesolution.cloud/notification/email/send/onbehalf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          replyTo: "adeoyetemitayo99@gmail.com",
+          replyTo: formData.email,
           subject: `New Contact Form Submission from ${formData.name}`,
           message: formData.message,
           contacts: [
             {
               name: formData.name,
-              email: formData.email,
+              email: "bookings@cleanquest.co.uk",
+              phone: formData.phone,
+              otherInfo: `Service: ${formData.service}`
+            },
+            {
+              name: formData.name,
+              email: "productdrive@proton.me",
+              phone: formData.phone,
+              otherInfo: `Service: ${formData.service}`
+            },
+            {
+              name: formData.name,
+              email: "vegiorder@gmail.me",
               phone: formData.phone,
               otherInfo: `Service: ${formData.service}`
             }
           ],
-          emailDisplayName: "CleanQuest Solutions",
+          emailDisplayName: "From Get a Quote",
           messageType: 0
         })
       })
@@ -69,8 +81,8 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "cleanquestsolutionsltd@gmail.com",
-      link: "mailto:cleanquestsolutionsltd@gmail.com",
+      value: "hello@cleanquest.co.uk",
+      link: "mailto:hello@cleanquest.co.uk",
     },
     {
       icon: Phone,
@@ -79,8 +91,8 @@ export default function Contact() {
       link: "tel:07459755292",
     },
     {
-      icon: Phone,
-      title: "Phone",
+      icon: MessageCircle,
+      title: "WhatsApp",
       value: "07771096254",
       link: "tel:07771096254",
     },
