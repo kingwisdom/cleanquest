@@ -29,8 +29,7 @@ export default function Services() {
       features: [
         "Detailed room-by-room cleaning",
         "Appliance cleaning",
-        "Window & skirting boards",
-        "Carpet & upholstery",
+        "Window & skirting boards"
       ],
       color: "from-green-500 to-green-600",
     },

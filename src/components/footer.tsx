@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -53,14 +53,14 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="text-green-500 flex-shrink-0 mt-1" size={18} />
                 <a
-                  href="mailto:Cleanquestsolutionsltd@gmail.com"
+                  href="mailto:info@cleanquest.co.uk"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Cleanquestsolutionsltd@gmail.com
+                  info@cleanquest.co.uk
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="text-green-500 flex-shrink-0 mt-1" size={18} />
+                <MessageCircle className="text-green-500 flex-shrink-0 mt-1" size={18} />
                 <a href="tel:07771096254" className="text-gray-400 hover:text-white transition-colors">
                   07771096254
                 </a>
