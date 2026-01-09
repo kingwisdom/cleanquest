@@ -40,12 +40,6 @@ export default function Contact() {
               email: "productdrive@proton.me",
               phone: formData.phone,
               otherInfo: `Service: ${formData.service}`
-            },
-            {
-              name: formData.name,
-              email: "vegiorder@gmail.me",
-              phone: formData.phone,
-              otherInfo: `Service: ${formData.service}`
             }
           ],
           emailDisplayName: "From Get a Quote",
