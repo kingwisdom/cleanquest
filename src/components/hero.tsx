@@ -90,8 +90,8 @@ export default function Hero() {
                 <div className="flex items-center justify-center lg:justify-start gap-2 text-green-600 mb-2">
                   <Shield size={20} />
                 </div>
-                <p className="text-sm font-semibold text-gray-900">Fully Insured</p>
-                <p className="text-xs text-gray-600">Protected Service</p>
+                    <p className="text-sm font-semibold text-gray-900">Fully Insured</p>
+                    <p className="text-xs text-gray-600">Protected Services</p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 text-green-600 mb-2">
@@ -127,15 +127,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs"
+              className="absolute -bottom-6 -left-8 bg-white rounded-xl shadow-xl p-1 max-w-xs"
             >
               <div className="flex items-center gap-4">
-                <div className="bg-green-100 rounded-full p-3">
-                  <Sparkles className="text-green-600" size={24} />
-                </div>
                 <div>
-                  <p className="text-2xl font-bold text-gray-900">100+</p>
-                  <p className="text-sm text-gray-600">Happy Clients</p>
+                  <a href="https://www.protectivity.com/product/cleaning-insurance/?showCert=true&policy=xuCAQd3PgyUcqMMi1kVH_w2" title="Cleaning Insurance Site Seal by Protectivity" target="_blank"><img src="https://secure.protectivity.com/customer/siteseal/asset/60" alt="Cleaners Site Seal by Protectivity" width="150" height="50" /></a>
                 </div>
               </div>
             </motion.div>
