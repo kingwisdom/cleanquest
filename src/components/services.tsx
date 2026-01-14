@@ -115,7 +115,7 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <a href="#contact" className="btn btn-primary btn-lg px-8 py-4 rounded-lg text-base font-medium inline-block">
+          <a href="#contact" className="btn btn-primary btn-lg rounded-lg">
             Request a Service
           </a>
         </motion.div>
